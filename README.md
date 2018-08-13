@@ -1,5 +1,5 @@
 # Roboscape
-Code for image processing part of roboscape. Camera used is a Basler ace acA1920-150uc Color USB 3.0 Camera.
+Code for image processing part of roboscape. Camera used is a Basler ace acA1920-150uc Color USB 3.0 Camera (https://www.baslerweb.com/en/sales-support/downloads/document-downloads/basler-ace-usb-3-0-users-manual/).
 
 ## Contents
 This repo contains the following folders:
