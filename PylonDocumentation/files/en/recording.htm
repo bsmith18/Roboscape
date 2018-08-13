@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="title" content="Recording" />
+<meta name="description" content="The Recording feature of the pylon Viewer allows you to record video clips or sequences of still images." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-US" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Recording</title>
+<link rel="StyleSheet" href="../css/main.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="../ehlpdhtm.js"></script>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "..";
+gCommonRootRelPath = "..";
+gTopicId = "3.1.1.0_5";
+</script>
+ <meta name="topic-breadcrumbs" content="Software > pylon Camera Software Suite > pylon Viewer" />
+</head>
+
+<body>
+
+
+<div id="header">
+	<div><script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:left;\" class=\"breadcrumbs\">");
+AddMasterBreadcrumbs("../index.htm", "breadcrumbs", " &gt; ", "", "basler_product_documentation.htm");
+document.write("<a class=\"breadcrumbs\" href=\"pylon_camera_software_suite.htm\">Software<\/a>  &gt;  <a class=\"breadcrumbs\" href=\"pylon_camera_software_suite.htm#bc-1\">pylon Camera Software Suite<\/a>  &gt;  <a class=\"breadcrumbs\" href=\"overview_of_the_pylon_viewer.htm\">pylon Viewer<\/a>  &gt;  Recording<\/p>");
+//]]></script>
+ </div>
+</div>
+
+
+<h1><a name="MiniTOCBookMark1"></a>Recording</h1>
+<p class="teaser">The Recording feature of the <a href="overview_of_the_pylon_viewer.htm">pylon 
+ Viewer</a> allows you to record video clips or sequences of still images. 
+ </p>
+<p>The Recording feature is available in the Windows version of the pylon 
+ Viewer only.</p>
+<div class="mini-toc">
+	<p align="left">In&#160;this&#160;topic&#160;<a class="dropspot" href="javascript:TextPopup(this)" id="MTHotSpot34705" ><span class="MTText" style="display: none;" >Show</span><span class="MTText" >Hide</span></a></p>
+<script type="text/javascript">//<![CDATA[
+TextPopupInit('MTHotSpot34705', 'MTPOPUP34705');
+//]]></script>
+ <div align="left" class="droptext" id="MTPOPUP34705" >
+  <ul style="text-align:left; "  >
+   <li><a href="#MiniTOCBookMark2" >Recording Page</a>
+</li>
+   <li><a href="#MiniTOCBookMark3" >Sampling Page</a>
+</li>
+   <li><a href="#MiniTOCBookMark4" >Image Display Area During Recording</a>
+</li>
+  </ul>
+ </div>
+</div>
+<p>The video clips or still images recorded using this feature will be 
+ displayed in the image display area of the pylon Viewer. The resulting 
+ videos can be played back with any standard media player already installed 
+ on your computer, e.g., Windows Media Player.</p>
+<p>There are several easy-to-configure options in the <span class="gui-text">Options</span> 
+ dialog to customize the recording feature for your needs. To open this 
+ dialog, go to <span class="gui-text">Tools</span> &gt; <span class="gui-text">Options</span>, 
+ and then click <span class="gui-text">Recording</span>. </p>
+<p>There are two pages with recording options:</p>
+<ul>
+	<li>the <span class="gui-text">Recording</span> page </li>
+	<li>the <span class="gui-text">Sampling</span> page</li>
+</ul>
+<h2><a name="MiniTOCBookMark2"></a>Recording Page</h2>
+<p><img src="images/screen_recording.png" alt="Recording page" title="Recording page" width="400" height="292" border="0" /></p>
+<p>On the <span class="gui-text">Recording</span> page, you have the following 
+ options:</p>
+<ul>
+	<li><span class="gui-text">Output folder</span>: Determines where the 
+	 resulting video clips and images are going to be stored. Use the ... 
+	 button to navigate to your preferred location.</li>
+	<li><span class="gui-text">Video (AVI)</span>: Check this option to 
+	 record a video clip. You can record video clips of up to 2 GB in size. 
+	 Once that threshold is reached, the recording will stop and an error 
+	 message will be displayed.</li>
+	<ul>
+		<li><span class="gui-text">Set fixed playback speed</span>: Determines 
+		 at what speed (in frames per second, fps) a recorded video clip 
+		 will be played back. If you don't check this box, the clip will 
+		 be played back in real-time, i.e., at the same speed that it has 
+		 been recorded.</li>
+	</ul>
+</ul>
+<p class="info">The minimum playback speed is 1 frame per second. This 
+ means that if you recorded a video at the speed of 1 frame per minute, 
+ it would still be played back at 1 frame per second.</p>
+<ul>
+	<ul>
+		<li><span class="gui-text">Use compression</span>: If you check 
+		 this option and click the ... button, the Windows <span class="gui-text">Compression 
+		 Options</span> dialog opens where you can choose the desired codec.</li>
+	</ul>
+	<li><span class="gui-text">Sequence of still images</span>: Check this 
+	 option to record a series of still images.</li>
+	<ul>
+		<li><span class="gui-text">Output format</span>: Determines the 
+		 file format of the resulting images. You can choose between bitmap 
+		 and tiff files.</li>
+	</ul>
+	<li><span class="gui-text">Recording buffer size</span><span>:</span> 
+	 <span>Determines how many images can be stored in the buffer during 
+	 recording.</span><br />
+	The image buffer acts like a cache to store images if they can't be 
+	 read out of the camera quickly enough. You can set the desired number 
+	 of images to be stored in the buffer and during recording the status 
+	 bar in the image display area will show you how much the buffer is 
+	 being used (in percent). &#160;</li>
+</ul>
+<ul>
+	<li><span class="gui-text">Show options every time a recording is started</span>: 
+	 <span>Uncheck this box if you don't want to see the recording options 
+	 every time you start a recording.</span></li>
+</ul>
+<h2><a name="MiniTOCBookMark3"></a>Sampling Page</h2>
+<p><img src="images/screen_sampling.png" alt="Sampling page" title="Sampling page" width="400" height="292" border="0" /></p>
+<p>On the <span class="gui-text">Sampling</span> page, you have the following 
+ options:</p>
+<ul>
+	<li><span class="gui-text">Frame-based recording</span>: Determines 
+	 the rate at which images are recorded based on frames.</li>
+	<ul>
+		<li><span class="gui-text"><strong>Record</strong> <strong>a</strong> 
+		 <strong>frame every x frame(s)</strong></span><strong>:</strong> 
+		 Lets you select to capture every frame, every third frame, every 
+		 fifth frame etc.</li>
+		<li><span class="gui-text">Stop recording after x recorded frames</span>: 
+		 Check this option to stop a recording after a certain number of 
+		 frames have been recorded.</li>
+	</ul>
+	<li><span class="gui-text">Time-based recording</span>: Determines 
+	 the rate at which images are recorded based on time.</li>
+	<ul>
+		<li><span class="gui-text">Record a frame every ...</span>: Lets 
+		 you select the time interval for recording frames.</li>
+		<li><span class="gui-text">Stop recording after ...</span>: <span>Check 
+		 this option to stop a recording after a certain period of time.</span></li>
+	</ul>
+</ul>
+<h2><a name="MiniTOCBookMark4"></a>Image Display Area During Recording</h2>
+<p>When you're recording a video or a sequence of still images, a red recording 
+ icon will appear in the image display area. You can pause the recording 
+ by clicking the <img src="images/icon_media-playback-pause.png" alt="Record Icon" title="Record Icon" width="15" height="15" border="0" />&#160;button 
+ in the toolbar, by pressing the F10 button or by clicking <strong><span 
+	 class="gui-text">Camera</span></strong>&#160;in the menu bar and selecting 
+ <span class="gui-text">Pause</span>. The recording icon will then change 
+ to a pause icon. To restart the recording, click the <img src="images/icon_media-playback-pause.png" alt="Record Icon" title="Record Icon" width="15" height="15" border="0" /> 
+ button again.</p>
+<p>At the bottom of the image display area is a status bar that shows you 
+ the status of the camera. It also shows the number of recorded and dropped 
+ frames as well as the image buffer usage. Frames are dropped when the 
+ image buffer has reached its maximum capacity. To remedy that situation, 
+ increase the buffer size on the <span class="gui-text">Sampling</span> 
+ page of the <span class="gui-text">Options</span> dialog as required.</p>
+ <div id="footer">
+	<hr size="1" align="center" />
+	<p>Suggestions for improving the documentation? Send us your <a id="mailFeedback">feedback 
+	 on this topic</a>. </p>
+	<p>For technical questions, please contact your <a href="https://www.baslerweb.com/en/sales/">local 
+	 distributor</a> or use the <a class="external-link" href="http://www.baslerweb.com/en/support/contact" 
+									 target="_blank">support form</a> on 
+	 the Basler website.</p>
+	<script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="../js/highlight.pack.js" type="text/javascript"></script>
+	<script src="../js/config.js" type="text/javascript"></script>
+	<script src="../js/enhance-topic.min.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

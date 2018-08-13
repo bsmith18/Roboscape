@@ -1,0 +1,576 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="description" content="This topic describes Basler's proprietary BCON for LVDS interface." />
+<meta name="title" content="BCON for LVDS Interface Description" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="noindex" />
+<meta http-equiv="Content-Language" content="en-US" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<title>BCON for MIPI Interface Description</title>
+<link rel="StyleSheet" href="../css/main.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="../ehlpdhtm.js"></script>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "..";
+gCommonRootRelPath = "..";
+gTopicId = "1.3_6";
+</script>
+ <meta name="topic-breadcrumbs" content="Cameras and Camera Modules" />
+</head>
+
+<body>
+
+
+<h1><a name="MiniTOCBookMark1"></a>BCON for MIPI Interface Description</h1>
+<table class="borderless-table">
+	<tr>
+		<td><p>Document number: AW001496</p>
+		<p>Version: 01</p>
+		<p>Release date: 23 April 2018</p></td>
+		<td><p><img src="images/image_basler_logo.svg" alt="Basler Logo" title="Basler Logo" border="0" /></p></td>
+	</tr>
+</table>
+<p class="info">All material in this publication is subject to change without 
+ notice and is copyright Basler AG.</p>
+<hr align="center" />
+<p class="teaser"><br />
+This document describes Basler's proprietary <a href="https://www.baslerweb.com/en/embedded-vision/embedded-vision-portfolio/embedded-vision-cameras/dart-bcon-for-mipi/">BCON 
+ for MIPI</a><a href="https://baslerweb.com/bcon"> </a>interface. </p>
+<p>The Basler BCON for MIPI interface offers the highest flexibility for 
+ connecting with embedded processors, such as FPGA SoCs and embedded SoCs 
+ with MIPI CSI-2 interface. </p>
+<div class="mini-toc">
+	<p align="left">In&#160;this&#160;topic&#160;<a class="dropspot" href="javascript:TextPopup(this)" id="MTHotSpot39175" ><span class="MTText" style="display: none;" >Show</span><span class="MTText" >Hide</span></a></p>
+<script type="text/javascript">//<![CDATA[
+TextPopupInit('MTHotSpot39175', 'MTPOPUP39175');
+//]]></script>
+ <div align="left" class="droptext" id="MTPOPUP39175" >
+  <ul style="text-align:left; "  >
+   <li><a href="#MiniTOCBookMark2" >General Description of the Camera Connections</a>
+</li>
+   <li><a href="#MiniTOCBookMark3" >FFC Connector</a>
+   <ul  >
+    <li><a href="#MiniTOCBookMark4" >Specifications</a>
+</li>
+    <li><a href="#MiniTOCBookMark5" >Pin Numbering and Assignments</a>
+</li>
+   </ul></li>
+   <li><a href="#MiniTOCBookMark6" >Electrical Requirements</a>
+   <ul  >
+    <li><a href="#MiniTOCBookMark7" >Absolute Maximum Ratings</a>
+</li>
+    <li><a href="#MiniTOCBookMark8" >Supply Current</a>
+</li>
+    <li><a href="#MiniTOCBookMark9" >Input Voltages</a>
+</li>
+    <li><a href="#MiniTOCBookMark10" >Output Voltages</a>
+</li>
+   </ul></li>
+   <li><a href="#MiniTOCBookMark11" >Timing Characteristics</a>
+   <ul  >
+    <li><a href="#MiniTOCBookMark12" >Input Timings</a>
+</li>
+    <li><a href="#MiniTOCBookMark13" >Output Timings</a>
+</li>
+   </ul></li>
+   <li><a href="#MiniTOCBookMark14" >I²C Interface Specification</a>
+</li>
+   <li><a href="#MiniTOCBookMark15" >MIPI D-PHY Interface Specification</a>
+</li>
+  </ul>
+ </div>
+</div>
+<h2><a name="MiniTOCBookMark2"></a>General Description of the Camera Connections</h2>
+<p>BCON for MIPI cameras are interfaced to external circuitry via a 28-pin 
+ flat flex cable (FFC) connector. The connector allows camera integration 
+ into embedded systems with both FPGAs and SoCs (systems on a chip).</p>
+<p>The connector provides connections for image transfer via a MIPI D-PHY 
+ interface, input and output signals, and power supply. Furthermore, standardized 
+ I²C lines are integrated, which are used for camera configuration.</p>
+<h2><a name="MiniTOCBookMark3"></a>FFC Connector</h2>
+<h3><a name="MiniTOCBookMark4"></a>Specifications</h3>
+<p>The 28-pin connector on the camera is a flexible flat cable (FFC) connector 
+ by Hirose Electric Co. It is specifically designed for shielded and impedance-controlled 
+ flexible flat cables. </p>
+<p>The connector order code is Hirose FH41-28S-0.5SH(05).</p>
+<p>For more information, see the <a href="https://www.hirose.com/product/en/products/FH41/FH41-28S-0.5SH(05)/">FH41 
+ Series connector website</a>.</p>
+<h3><a name="MiniTOCBookMark5"></a>Pin Numbering and Assignments</h3>
+<p class="subheading">Pin 1 Position</p>
+<p>As shown below, pin 1 of the FFC connector is indicated by an arrow, 
+ and pin 28 is indicated by the number 28.</p>
+<p><img src="images/drawing_dart_bcon_mipi_connector_pins.png" alt="FFC Connector Pin Positions" title="FFC Connector Pin Positions" border="0" /></p>
+<p class="subheading">Pin Numbering and Assignments</p>
+<table >
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<thead>
+  <tr>
+		<th>Pin # <br />
+		(Camera Side)</th>
+		<th>Pin Name</th>
+		<th>Pin #<br />
+		(System Side)</th>
+		<th>Function</th>
+		<th>Notes</th>
+	</tr>
+ </thead>
+	<tr>
+		<td colspan="3"><p>Ground Contacts</p></td>
+		<td><p>GND</p></td>
+		<td>See note for pin 1 (camera side).</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>GND</td>
+		<td><p>28</p></td>
+		<td><p>Power supply</p></td>
+		<td><p>All GND pins, including the five shield GND contacts on 
+		 the opposite side of the connector, must be connected to a common 
+		 GND plane. Avoid long PCB traces, prefer direct vias.</p></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>VCC</td>
+		<td><p>27</p></td>
+		<td><p>Power supply</p></td>
+		<td rowspan="3"><p>Single camera supply voltage, 5 VDC nominal. 
+		 Connect all pins.</p></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>VCC</td>
+		<td><p>26</p></td>
+		<td><p>Power supply</p></td>
+		
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>VCC</td>
+		<td><p>25</p></td>
+		<td><p>Power supply</p></td>
+		
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>IO_CamOut0</td>
+		<td><p>24</p></td>
+		<td><p>GPO</p></td>
+		<td><p>Single-ended general purpose output line 0 (e.g., flash 
+		 or strobe signal).</p></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>IO_CamOut1</td>
+		<td><p>23</p></td>
+		<td><p>GPO</p></td>
+		<td><p>Single-ended general purpose output line 1 (e.g., flash 
+		 or strobe signal).</p></td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td><p>GND</p></td>
+		<td><p>22</p></td>
+		<td><p>GND</p></td>
+		<td>See note for pin 1 (camera side).</td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td>I2C_SDA</td>
+		<td><p>21</p></td>
+		<td><p>Configuration interface</p></td>
+		<td><p>I²C interface data line. A pull-up resistor to 1.8 V is 
+		 required on the system side. Refer to the <a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">I²C-bus 
+		 Specification and User Manual</a> for the appropriate resistor 
+		 value.<br />
+		Note that FFCs can have a significant line capacitance.</p></td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td>I2C_SCL</td>
+		<td><p>20</p></td>
+		<td><p>Configuration interface</p></td>
+		<td><p>I²C interface clock line. A pull-up resistor to 1.8 V is 
+		 required on the system side. Refer to the <a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">I²C-bus 
+		 Specification and User Manual</a> for the appropriate resistor 
+		 value.<br />
+		Note that FFCs can have a significant line capacitance.</p></td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>GND</td>
+		<td><p>19</p></td>
+		<td><p>GND</p></td>
+		<td>See note for pin 1 (camera side).</td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td>IO_CamIn0</td>
+		<td><p>18</p></td>
+		<td><p>GPI</p></td>
+		<td><p>Single-ended general purpose input line 0 (e.g. trigger 
+		 signal).</p></td>
+	</tr>
+	<tr>
+		<td>12</td>
+		<td>IO_CamIn1</td>
+		<td><p>17</p></td>
+		<td><p>GPI</p></td>
+		<td><p>Single-ended general purpose input line 1 (e.g. trigger 
+		 signal).</p></td>
+	</tr>
+	<tr>
+		<td>13</td>
+		<td>GND</td>
+		<td><p>16</p></td>
+		<td><p>GND</p></td>
+		<td>See note for pin 1 (camera side).</td>
+	</tr>
+	<tr>
+		<td>14</td>
+		<td>D1-</td>
+		<td><p>15</p></td>
+		<td><p>Data output</p></td>
+		<td><p>MIPI D-PHY data lane 1 negative pin.</p></td>
+	</tr>
+	<tr>
+		<td>15</td>
+		<td>D1+</td>
+		<td><p>14</p></td>
+		<td><p>Data output</p></td>
+		<td><p>MIPI D-PHY data lane 1 positive pin.</p></td>
+	</tr>
+	<tr>
+		<td>16</td>
+		<td>GND</td>
+		<td><p>13</p></td>
+		<td><p>GND</p></td>
+		<td>See note for pin 1 (camera side).</td>
+	</tr>
+	<tr>
+		<td>17</td>
+		<td>D2-</td>
+		<td><p>12</p></td>
+		<td><p>Data output</p></td>
+		<td><p>MIPI D-PHY data lane 2 negative pin.</p></td>
+	</tr>
+	<tr>
+		<td>18</td>
+		<td>D2+</td>
+		<td><p>11</p></td>
+		<td><p>Data output</p></td>
+		<td><p>MIPI D-PHY data lane 2 positive pin.</p></td>
+	</tr>
+	<tr>
+		<td>19</td>
+		<td>GND</td>
+		<td><p>10</p></td>
+		<td><p>GND</p></td>
+		<td>See note for pin 1 (camera side).</td>
+	</tr>
+	<tr>
+		<td>20</td>
+		<td>CLK-</td>
+		<td><p>9</p></td>
+		<td><p>Clock output</p></td>
+		<td><p>MIPI D-PHY clock lane negative pin.</p></td>
+	</tr>
+	<tr>
+		<td>21</td>
+		<td>CLK+</td>
+		<td><p>8</p></td>
+		<td><p>Clock output</p></td>
+		<td><p>MIPI D-PHY clock lane positive pin.</p></td>
+	</tr>
+	<tr>
+		<td>22</td>
+		<td>GND</td>
+		<td><p>7</p></td>
+		<td><p>GND</p></td>
+		<td>See note for pin 1 (camera side).</td>
+	</tr>
+	<tr>
+		<td>23</td>
+		<td>D3-</td>
+		<td><p>6</p></td>
+		<td><p>Data output</p></td>
+		<td><p>MIPI D-PHY data lane 3 negative pin.</p></td>
+	</tr>
+	<tr>
+		<td>24</td>
+		<td>D3+</td>
+		<td><p>5</p></td>
+		<td><p>Data output</p></td>
+		<td><p>MIPI D-PHY data lane 3 positive pin.</p></td>
+	</tr>
+	<tr>
+		<td>25</td>
+		<td>GND</td>
+		<td><p>4</p></td>
+		<td><p>GND</p></td>
+		<td>See note for pin 1 (camera side).</td>
+	</tr>
+	<tr>
+		<td>26</td>
+		<td>D4-</td>
+		<td><p>3</p></td>
+		<td><p>Data output</p></td>
+		<td><p>MIPI D-PHY data lane 4 negative pin.</p></td>
+	</tr>
+	<tr>
+		<td>27</td>
+		<td>D4+</td>
+		<td><p>2</p></td>
+		<td><p>Data output</p></td>
+		<td><p>MIPI D-PHY data lane 4 positive pin.</p></td>
+	</tr>
+	<tr>
+		<td>28</td>
+		<td>GND</td>
+		<td><p>1</p></td>
+		<td><p>GND</p></td>
+		<td>See note for pin 1 (camera side).</td>
+	</tr>
+</table>
+<h2><a name="MiniTOCBookMark6"></a>Electrical Requirements</h2>
+<h3><a name="MiniTOCBookMark7"></a>Absolute Maximum Ratings</h3>
+<table >
+	<thead>
+  <tr>
+		<th>Pin Name</th>
+		<th>Absolute Minimum</th>
+		<th>Absolute Maximum</th>
+	</tr>
+ </thead>
+	<tr>
+		<td>VCC</td>
+		<td rowspan="3">-0.3 VDC</td>
+		<td>6.0 VDC</td>
+	</tr>
+	<tr>
+		<td>I2C_SDA<br />
+		I2C_SCL</td>
+		<td>2.0 VDC</td>
+	</tr>
+	<tr>
+		<td>IO_CamIn0<br />
+		IO_CamIn1</td>
+		<td>2.0 VDC</td>
+	</tr>
+</table>
+<h3><a name="MiniTOCBookMark8"></a>Supply Current</h3>
+<table >
+	<col />
+	<col />
+	<col />
+	<col />
+	<thead>
+  <tr>
+		<th>Pin Name</th>
+		<th>Notes</th>
+		<th>Nominal (Recommended)</th>
+		<th>Maximum</th>
+	</tr>
+ </thead>
+	<tr>
+		<td>VCC</td>
+		<td>Maximum power to be provided via the VCC pins is 2.5 W at 5 
+		 VDC nominal supply voltage.</td>
+		<td>Varies by camera module type</td>
+		<td>0.5 A</td>
+	</tr>
+</table>
+<h3><a name="MiniTOCBookMark9"></a>Input Voltages</h3>
+<table >
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<thead>
+  <tr>
+		<th>Pin Name</th>
+		<th>Notes</th>
+		<th>Minimum</th>
+		<th>Nominal (Recommended)</th>
+		<th>Maximum</th>
+	</tr>
+ </thead>
+	<tr>
+		<td>VCC</td>
+		<td>Recommended ramp up time: &gt;&#160;1ms<br />
+		Ripple: &lt;&#160;1%</td>
+		<td>4.5&#160;VDC</td>
+		<td>5.0&#160;VDC</td>
+		<td>5.5&#160;VDC</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><p>I2C_SDA<br />
+		I2C_SCL<br />
+		IO_CamIn0<br />
+		IO_CAMIn1</p></td>
+		<td>Input high voltage</td>
+		<td>1.3&#160;VDC</td>
+		<td>1.8 VDC</td>
+		<td>1.9 VDC</td>
+	</tr>
+	<tr>
+		<td>Input low voltage</td>
+		<td>0.0 VDC</td>
+		<td>0.0 VDC</td>
+		<td>0.5 VDC</td>
+	</tr>
+</table>
+<h3><a name="MiniTOCBookMark10"></a>Output Voltages</h3>
+<table >
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<thead>
+  <tr>
+		<th>Pin Name</th>
+		<th>Notes</th>
+		<th>Minimum</th>
+		<th>Nominal (Recommended)</th>
+		<th>Maximum</th>
+	</tr>
+ </thead>
+	<tr>
+		<td rowspan="2"><p>IO_CamOut0<br />
+		IO_CAMOut1</p></td>
+		<td>Output high voltage</td>
+		<td>1.2&#160;VDC</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>Output low voltage</td>
+		<td>-</td>
+		<td>-</td>
+		<td>0.5 VDC</td>
+	</tr>
+	<tr>
+		<td>VOD</td>
+		<td rowspan="2">MIPI clock and data lanes, HS Mode</td>
+		<td><p>140 mV</p></td>
+		<td>-</td>
+		<td>270 mV</td>
+	</tr>
+	<tr>
+		<td>VCMTX</td>
+		<td><p>150 mV</p></td>
+		<td>-</td>
+		<td>250 mV</td>
+	</tr>
+	<tr>
+		<td>VOL</td>
+		<td rowspan="2">MIPI clock and data lanes, LP Mode</td>
+		<td>-50 mV</td>
+		<td>-</td>
+		<td>50 mV</td>
+	</tr>
+	<tr>
+		<td>VOH</td>
+		<td>1.1 VDC</td>
+		<td>-</td>
+		<td>1.3 VDC</td>
+	</tr>
+</table>
+<h2><a name="MiniTOCBookMark11"></a>Timing Characteristics</h2>
+<h3><a name="MiniTOCBookMark12"></a>Input Timings</h3>
+<table >
+	<thead>
+  <tr>
+		<th>Pin</th>
+		<th>Minimum Frequency</th>
+		<th>Maximum Frequency</th>
+		<th>Notes</th>
+	</tr>
+ </thead>
+	<tr>
+		<td><p>IO_CamIn0<br />
+		IO_CamIn1</p></td>
+		<td>0 kHz</td>
+		<td>100 kHz</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>I2C_SCL</td>
+		<td>0 kHz</td>
+		<td>400 kHz</td>
+		<td><p>In the <a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">I²C-bus 
+		 Specification and User Manual</a>, this mode is called &quot;fast-mode&quot; 
+		 with 400 kbit/s.</p></td>
+	</tr>
+</table>
+<h3><a name="MiniTOCBookMark13"></a>Output Timings</h3>
+<table >
+	<thead>
+  <tr>
+		<th>Pin</th>
+		<th>Minimum Frequency</th>
+		<th>Maximum Frequency</th>
+		<th>Notes</th>
+	</tr>
+ </thead>
+	<tr>
+		<td><p>IO_CamOut0<br />
+		IO_CamOut1</p></td>
+		<td>0 kHz</td>
+		<td>100 kHz</td>
+		<td>-</td>
+	</tr>
+</table>
+<h2><a name="MiniTOCBookMark14"></a>I²C Interface Specification</h2>
+<p>The I²C interface follows the <a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">I²C-bus 
+ specification</a>.</p>
+<h2><a name="MiniTOCBookMark15"></a>MIPI D-PHY Interface Specification</h2>
+<p>The MIPI D-PHY clock and data lanes follow the MIPI D-PHY v1.0 specification.</p>
+</body>
+</html>

@@ -1,0 +1,4 @@
+(function() {
+var toc =  [{"type":"item","data-rhtags":"33","name":"Hardware Installation (dart BCON for LVDS)","url":"en/hardware_installation_(dart_bcon_for_lvds).htm"},{"type":"item","data-rhtags":"14","name":"Hardware Installation (ace GigE)","url":"en/hardware_installation_(ace_gige).htm"},{"type":"item","data-rhtags":"34","name":"Hardware Installation (ace/dart/pulse USB 3.0)","url":"en/hardware_installation_(ace_dart_pulse_usb_3.0).htm"},{"type":"item","data-rhtags":"14","name":"Network Configuration (ace GigE)","url":"en/network_configuration_(ace_gige).htm"},{"type":"item","name":"Software Installation (Linux)","url":"en/software_installation_(linux).htm"},{"type":"item","data-rhtags":"35","name":"Software Installation (Windows)","url":"en/software_installation_(windows).htm"}];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();
